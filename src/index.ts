@@ -38,12 +38,26 @@
    var overlaping_charaters = []
    var is_partial = false;
    var after_last_letter_found_pos = 0;
+   var root = ''
+   var word = ''
  
    //Get words from URL
-   var word = req.params.word;
-   var root = req.params.root;
+   var word1 = req.params.word;
+   var word2 = req.params.root;
  
-   //if word or root are null return 422
+   
+ 
+   //Use the shortest work as root and the longest as word
+   if(word1.length <= word2.length){
+     root=word1
+     word=word2
+   }
+ 
+   if(word1.length > word2.length){
+     root= word2
+     word= word1
+   }
+ 
  
    //Split string into arrays
    var arr_word = word.split("");
@@ -91,6 +105,13 @@
  
          //changin j pos to look only after the first found letter, instead of re-itererating the wole array
          after_last_letter_found_pos = j+1;
+ 
+         console.log('letter found: ' + arr_root[i]);
+         console.log('overlap number: ' + overlap_number);
+         console.log('after_last_letter_found_pos: ' + after_last_letter_found_pos);
+         
+         
+ 
          break
        }
      }
