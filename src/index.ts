@@ -4,6 +4,7 @@
  const app = require('express')()
  const cors = require('cors')
  import { Request, Response } from 'express'
+ export default app
  
  /**
   * App Variables
