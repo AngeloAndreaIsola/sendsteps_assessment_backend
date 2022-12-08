@@ -2,10 +2,12 @@
     npm install
     npm run start:dev
 
+#Run tests
+    npx jest
+
 
 #Run with Docker
-docker build . -t angeloandreaisola/sendsteps_assessment_backend          
-
+docker build . -t angeloandreaisola/sendsteps_assessment_backend
 docker run -p 8080:8080 -d angeloandreaisola/sendsteps_assessment_backend:latest
 
 Now the APIs should be live at http://localhost:8080/
